@@ -1,7 +1,24 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+function Home() {
+  return <h2>Welcome to SAZBALL Home</h2>;
+}
+
+function Momentum() {
+  return <h2>Momentum Page 🔥</h2>;
+}
+
+function Stats() {
+  return <h2>Stats Page 📊</h2>;
+}
+
+function Insights() {
+  return <h2>Insights Page 🧠</h2>;
+}
+
 function App() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif" }}>
-      
+    <Router>
       <header style={{ 
         background: "linear-gradient(90deg, #0f2027, #203a43, #2c5364)",
         color: "white",
@@ -10,22 +27,25 @@ function App() {
         justifyContent: "space-between",
         alignItems: "center"
       }}>
-        <h1 style={{ margin: 0 }}>SAZBALL 🏏🔥</h1>
+        <h1>SAZBALL 🏏🔥</h1>
         <nav>
-          <a href="/live" style={{color:"white", margin:"0 15px"}}>Live</a>
-          <a href="/momentum" style={{color:"white", margin:"0 15px"}}>Momentum</a>
-          <a href="/stats" style={{color:"white", margin:"0 15px"}}>Stats</a>
-          <a href="/insights" style={{color:"white", margin:"0 15px"}}>Insights</a>
+          <Link to="/live" style={{color:"white", margin:"0 15px"}}>Live</Link>
+          <Link to="/momentum" style={{color:"white", margin:"0 15px"}}>Momentum</Link>
+          <Link to="/stats" style={{color:"white", margin:"0 15px"}}>Stats</Link>
+          <Link to="/insights" style={{color:"white", margin:"0 15px"}}>Insights</Link>
         </nav>
       </header>
 
-      <main style={{ textAlign: "center", marginTop: "80px" }}>
-        <h2>Welcome to SAZBALL</h2>
-        <p>Attack. Persist. Dominate.</p>
-        <p>Real-time cricket intelligence platform.</p>
+      <main style={{ textAlign: "center", marginTop: "50px" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/live" element={<Home />} />
+          <Route path="/momentum" element={<Momentum />} />
+          <Route path="/stats" element={<Stats />} />
+          <Route path="/insights" element={<Insights />} />
+        </Routes>
       </main>
-
-    </div>
+    </Router>
   );
 }
 
