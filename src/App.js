@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Live from "./Live";
 function Home() {
   return <h2>Welcome to SAZBALL Home</h2>;
@@ -45,6 +46,7 @@ function App() {
           <Route path="/insights" element={<Insights />} />
         </Routes>
       </main>
+      <Analytics />
     </Router>
   );
 }
