@@ -4,13 +4,11 @@ function Live() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = "a9a9e81c-fff8-4e14-a06d-3d1d6c7bb8c5"; // ← replace with your API key
-
   useEffect(() => {
-    fetch(`https://api.cricapi.com/v1/currentMatches?apikey=${API_KEY}&offset=0`)
+    fetch("/api/live")
       .then(res => res.json())
       .then(data => {
-        setMatches(data.data || []); // data.data me matches hote hain
+        setMatches(data.data || []);
         setLoading(false);
       })
       .catch(err => {
@@ -20,23 +18,21 @@ function Live() {
   }, []);
 
   if (loading) return <p>Loading live matches...</p>;
-  if (!matches.length) return <p>No live matches currently 😌</p>;
+  if (!matches.length) return <p>No live matches now 😌</p>;
 
   return (
     <div>
-      <h2>Live Matches 🏏🔥</h2>
-      {matches.map((match, index) => (
+      <h2 style={{ textAlign: "center" }}>Live Matches 🏏🔥</h2>
+      {matches.map((m, index) => (
         <div key={index} style={{
-          border:"1px solid gray",
-          padding:"15px",
-          margin:"10px",
-          borderRadius:"10px",
-          background: "#f0f8ff"
+          border: "1px solid #ddd",
+          padding: "12px",
+          margin: "10px",
+          borderRadius: "8px"
         }}>
-          <h3>{match.name}</h3>
-          <p>{match.status}</p>
-          {match.score ? <p>Score: {match.score}</p> : null}
-          <p>Venue: {match.venue}</p>
+          <h4>{m.name}</h4>
+          {m.score ? <p>Score: {m.score}</p> : null}
+          <p>Status: {m.status}</p>
         </div>
       ))}
     </div>
