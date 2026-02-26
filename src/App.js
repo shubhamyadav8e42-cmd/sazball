@@ -12,10 +12,10 @@ function App() {
       }}>
         <h1 style={{ margin: 0 }}>SAZBALL 🏏🔥</h1>
         <nav>
-          <a href="#" style={{color:"white", margin:"0 15px"}}>Live</a>
-          <a href="#" style={{color:"white", margin:"0 15px"}}>Momentum</a>
-          <a href="#" style={{color:"white", margin:"0 15px"}}>Stats</a>
-          <a href="#" style={{color:"white", margin:"0 15px"}}>Insights</a>
+          <a href="/live" style={{color:"white", margin:"0 15px"}}>Live</a>
+          <a href="/momentum" style={{color:"white", margin:"0 15px"}}>Momentum</a>
+          <a href="/stats" style={{color:"white", margin:"0 15px"}}>Stats</a>
+          <a href="/insights" style={{color:"white", margin:"0 15px"}}>Insights</a>
         </nav>
       </header>
 
