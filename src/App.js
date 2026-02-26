@@ -39,7 +39,7 @@ function App() {
       <main style={{ textAlign: "center", marginTop: "50px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/live" element={<Home />} />
+          <Route path="/live" element={<Live />} />
           <Route path="/momentum" element={<Momentum />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/insights" element={<Insights />} />
