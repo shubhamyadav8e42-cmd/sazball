@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import Live from "./Live";
 function Home() {
   return <h2>Welcome to SAZBALL Home</h2>;
 }
